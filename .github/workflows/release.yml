@@ -15,17 +15,16 @@ jobs:
     # The type of runner that the job will run on
     # runs-on: [self-hosted, cloud-engineering, tools-low]
     runs-on: ubuntu-latest
-  steps:
-    # Checkout the current repo. Fetch depth 0 ensures ALL commits are pulled.
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: "0"
-    - name: Bump version and push tag (staging)
-      # if: github.ref == 'refs/heads/staging'
-      uses: anothrNick/github-tag-action@1.36.0
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-        WITH_V: true
-        PRERELEASE_SUFFIX: "-staging"
-        DEFAULT_BUMP: "patch"
-        RELEASE_BRANCHES: "master"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: "0"
+      - name: Bump version and push tag (staging)
+        # if: github.ref == 'refs/heads/staging'
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          WITH_V: true
+          PRERELEASE_SUFFIX: "-staging"
+          DEFAULT_BUMP: "patch"
+          RELEASE_BRANCHES: "master"
