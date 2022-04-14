@@ -5,7 +5,7 @@ name: Deploy the app's assets
 # Controls when the action will run.
 on:
   push:
-    branches: [staging, main]
+    branches: [staging, master]
 
 defaults:
   run:
