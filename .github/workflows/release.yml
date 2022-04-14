@@ -13,8 +13,8 @@ defaults:
 jobs:
   tag:
     # The type of runner that the job will run on
-    runs-on: [self-hosted, cloud-engineering, tools-low]
-
+    # runs-on: [self-hosted, cloud-engineering, tools-low]
+    runs-on: ubuntu-latest
   steps:
     # Checkout the current repo. Fetch depth 0 ensures ALL commits are pulled.
     - uses: actions/checkout@v2
